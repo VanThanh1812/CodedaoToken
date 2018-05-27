@@ -53,6 +53,13 @@
                 "operationId": "PaymentController.Earn amount CNC to address",
                 "parameters": [
                     {
+                        "in": "query",
+                        "name": "key",
+                        "description": "The key for req",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "description": "body for Earn",
@@ -124,6 +131,13 @@
                 "operationId": "PaymentController.Send amount CNC",
                 "parameters": [
                     {
+                        "in": "query",
+                        "name": "key",
+                        "description": "The key for req",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "description": "body for Payment content",
@@ -154,6 +168,13 @@
                 "description": "create request tranfer",
                 "operationId": "PaymentController.Send amount CNC from to",
                 "parameters": [
+                    {
+                        "in": "query",
+                        "name": "key",
+                        "description": "The key for req",
+                        "required": true,
+                        "type": "string"
+                    },
                     {
                         "in": "body",
                         "name": "body",
@@ -216,7 +237,7 @@
                     "format": "int32"
                 },
                 "message": {
-                    "$ref": "#/definitions/199.0xc4203158c0.false"
+                    "$ref": "#/definitions/199.0xc420385230.false"
                 }
             }
         },
@@ -260,7 +281,7 @@
             "type": "object",
             "properties": {
                 "data": {
-                    "$ref": "#/definitions/70.0xc420315830.false"
+                    "$ref": "#/definitions/70.0xc4203851a0.false"
                 },
                 "error": {
                     "$ref": "#/definitions/models.ErrorResponse"

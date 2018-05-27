@@ -37,6 +37,11 @@ paths:
       description: create request earn CNC
       operationId: PaymentController.Earn amount CNC to address
       parameters:
+      - in: query
+        name: key
+        description: The key for req
+        required: true
+        type: string
       - in: body
         name: body
         description: body for Earn
@@ -83,6 +88,11 @@ paths:
       description: create request tranfer
       operationId: PaymentController.Send amount CNC
       parameters:
+      - in: query
+        name: key
+        description: The key for req
+        required: true
+        type: string
       - in: body
         name: body
         description: body for Payment content
@@ -103,6 +113,11 @@ paths:
       description: create request tranfer
       operationId: PaymentController.Send amount CNC from to
       parameters:
+      - in: query
+        name: key
+        description: The key for req
+        required: true
+        type: string
       - in: body
         name: body
         description: body for Payment content
@@ -144,7 +159,7 @@ definitions:
         type: integer
         format: int32
       message:
-        $ref: '#/definitions/199.0xc4203158c0.false'
+        $ref: '#/definitions/199.0xc420385230.false'
   models.Object:
     title: Object
     type: object
@@ -174,7 +189,7 @@ definitions:
     type: object
     properties:
       data:
-        $ref: '#/definitions/70.0xc420315830.false'
+        $ref: '#/definitions/70.0xc4203851a0.false'
       error:
         $ref: '#/definitions/models.ErrorResponse'
   models.TransferFromRequest:
