@@ -9,17 +9,24 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"codedaotoken/models"
 	"github.com/ethereum/go-ethereum/core/types"
+	"errors"
 )
 
 var (
 	auth *bind.TransactOpts
+	proofkey = "24e890c939b2f19273a2843f0ba1836c"
 )
 
 func init(){
 	auth, _ = bind.NewTransactor(strings.NewReader(key), "thanhpv1234")
 }
 
-func Transfer(rq models.TransferRequest)(*types.Transaction, error){
+func Transfer(proofkey string, rq models.TransferRequest)(*types.Transaction, error){
+
+	if !checkProofKey(proofkey) {
+		return nil, errors.New("Proof key error.")
+	}
+
 	tx, err := tokenContract.Transfer(auth, common.HexToAddress(rq.AddrTo), big.NewInt(rq.Amount))
 	if err != nil {
 		log.Fatalf("Failed to request token transfer: %v", err)
@@ -29,7 +36,11 @@ func Transfer(rq models.TransferRequest)(*types.Transaction, error){
 	return tx, nil
 }
 
-func TransferFrom(rq models.TransferFromRequest)(*types.Transaction, error){
+func TransferFrom(proofkey string, rq models.TransferFromRequest)(*types.Transaction, error){
+	if !checkProofKey(proofkey) {
+		return nil, errors.New("Proof key error.")
+	}
+
 	tx, err := tokenContract.TransferFrom(auth, common.HexToAddress(rq.AddrFrom),common.HexToAddress(rq.AddrTo), big.NewInt(rq.Amount))
 	if err != nil {
 		log.Fatalf("Failed to request token transfer: %v", err)
@@ -39,7 +50,11 @@ func TransferFrom(rq models.TransferFromRequest)(*types.Transaction, error){
 	return tx, nil
 }
 
-func Earn(eq models.EarnRequest)(*types.Transaction, error){
+func Earn(proofkey string, eq models.EarnRequest)(*types.Transaction, error){
+	if !checkProofKey(proofkey) {
+		return nil, errors.New("Proof key error.")
+	}
+
 	tx, err := tokenContract.Earn(auth, common.HexToAddress(eq.AddrTo), big.NewInt(eq.Amount))
 	if err != nil {
 		log.Fatalf("Failed to request token transfer: %v", err)
@@ -47,4 +62,12 @@ func Earn(eq models.EarnRequest)(*types.Transaction, error){
 	}
 	fmt.Printf("Transfer pending: 0x%x\n", tx.Hash())
 	return tx, nil
+}
+
+func checkProofKey(key string) bool {
+	if key == proofkey {
+		return true
+	}else{
+		return false
+	}
 }

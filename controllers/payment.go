@@ -101,6 +101,7 @@ func (c *PaymentController)GetTotalSupply()(){
 // Post ...
 // @Title Send amount CNC
 // @Description create request tranfer
+// @Param	key		query 	string	true		"The key for req"
 // @Param	body		body 	models.TransferRequest	true		"body for Payment content"
 // @Success 201 {object} models.Response
 // @Failure 403 body is empty
@@ -109,8 +110,11 @@ func (c *PaymentController) Transfer() {
 	var rq models.TransferRequest
 	json.Unmarshal(c.Ctx.Input.RequestBody, &rq)
 
+	var proofkey string
+	proofkey = c.Ctx.Input.Query("key")
+
 	var res models.Response
-	tx, err := payment.Transfer(rq)
+	tx, err := payment.Transfer(proofkey, rq)
 	if err == nil{
 		res = models.Response{
 			Data: tx,
@@ -123,7 +127,7 @@ func (c *PaymentController) Transfer() {
 		res = models.Response{
 			Data: nil,
 			Error: models.ErrorResponse{
-				Message: err,
+				Message: err.Error(),
 				Code: 403,
 			},
 		}
@@ -136,6 +140,7 @@ func (c *PaymentController) Transfer() {
 // Post ...
 // @Title Send amount CNC from to
 // @Description create request tranfer
+// @Param	key		query 	string	true		"The key for req"
 // @Param	body		body 	models.TransferFromRequest	true		"body for Payment content"
 // @Success 201 {object} models.Response
 // @Failure 403 body is empty
@@ -144,8 +149,11 @@ func (c *PaymentController) TransferFrom() {
 	var rq models.TransferFromRequest
 	json.Unmarshal(c.Ctx.Input.RequestBody, &rq)
 
+	var proofkey string
+	proofkey = c.Ctx.Input.Query("key")
+
 	var res models.Response
-	tx, err := payment.TransferFrom(rq)
+	tx, err := payment.TransferFrom(proofkey, rq)
 	if err == nil{
 		res = models.Response{
 			Data: tx,
@@ -158,7 +166,7 @@ func (c *PaymentController) TransferFrom() {
 		res = models.Response{
 			Data: nil,
 			Error: models.ErrorResponse{
-				Message: err,
+				Message: err.Error(),
 				Code: 403,
 			},
 		}
@@ -171,6 +179,7 @@ func (c *PaymentController) TransferFrom() {
 // Post ...
 // @Title Earn amount CNC to address
 // @Description create request earn CNC
+// @Param	key		query 	string	true		"The key for req"
 // @Param	body		body 	models.EarnRequest	true		"body for Earn"
 // @Success 201 {object} models.Response
 // @Failure 403 body is empty
@@ -179,8 +188,11 @@ func (c *PaymentController) Earn(){
 	var eq models.EarnRequest
 	json.Unmarshal(c.Ctx.Input.RequestBody, &eq)
 
+	var proofkey string
+	proofkey = c.Ctx.Input.Query("key")
+
 	var res models.Response
-	tx, err := payment.Earn(eq)
+	tx, err := payment.Earn(proofkey, eq)
 	if err == nil{
 		res = models.Response{
 			Data: tx,
@@ -193,7 +205,7 @@ func (c *PaymentController) Earn(){
 		res = models.Response{
 			Data: nil,
 			Error: models.ErrorResponse{
-				Message: err,
+				Message: err.Error(),
 				Code: 403,
 			},
 		}
