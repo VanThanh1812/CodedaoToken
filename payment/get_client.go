@@ -15,7 +15,7 @@ const (
 )
 
 func GetClient () (*ethclient.Client, error) {
-	return ethclient.Dial("/home/vanthanhbk/.ethereum/rinkeby/geth.ipc")
+	return ethclient.Dial("/home/phanvanthanh_mrt/.ethereum/rinkeby/geth.ipc")
 }
 
 func GetContract () *contract.CodedaoNetwork {
