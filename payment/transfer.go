@@ -33,14 +33,14 @@ func Transfer(proofkey string, rq models.TransferRequest)(*types.Transaction, er
 		return nil, errors.New("Proof key error.")
 	}
 
-	if rq.Amount <= 0 {
-		return nil, errors.New("Amount require more than 0")
-	}
-
-	if checkAddress(rq.AddrTo){
+	if !checkAddress(rq.AddrTo){
 		return nil, errors.New("Address To wrong.")
 	}
 
+	if rq.Amount <= 0 {
+		return nil, errors.New("Amount require more than 0")
+	}
+	
 	tx, err := tokenContract.Transfer(auth, common.HexToAddress(rq.AddrTo), big.NewInt(rq.Amount))
 	if err != nil {
 		log.Fatalf("Failed to request token transfer: %v", err)
@@ -55,11 +55,11 @@ func TransferFrom(proofkey string, rq models.TransferFromRequest)(*types.Transac
 		return nil, errors.New("Proof key error.")
 	}
 
-	if checkAddress(rq.AddrTo){
+	if !checkAddress(rq.AddrTo){
 		return nil, errors.New("Address To wrong.")
 	}
 
-	if checkAddress(rq.AddrFrom){
+	if !checkAddress(rq.AddrFrom){
 		return nil, errors.New("Address From wrong.")
 	}
 
@@ -81,7 +81,7 @@ func Earn(proofkey string, eq models.EarnRequest)(*types.Transaction, error){
 		return nil, errors.New("Proof key error.")
 	}
 
-	if checkAddress(eq.AddrTo){
+	if !checkAddress(eq.AddrTo){
 		return nil, errors.New("Address To wrong.")
 	}
 
