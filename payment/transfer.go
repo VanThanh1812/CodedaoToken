@@ -15,11 +15,15 @@ import (
 
 var (
 	auth *bind.TransactOpts
+	err error
 	proofkey = "24e890c939b2f19273a2843f0ba1836c"
 )
 
 func init(){
-	auth, _ = bind.NewTransactor(strings.NewReader(key), "thanhpv1234")
+	auth, err = bind.NewTransactor(strings.NewReader(key), "thanhpv1234")
+	if err != nil {
+		log.Fatalf("Failed to connect to the Ethereum client: %v", err)
+	}
 }
 
 func checkAddress(addr string) bool {
@@ -40,7 +44,7 @@ func Transfer(proofkey string, rq models.TransferRequest)(*types.Transaction, er
 	if rq.Amount <= 0 {
 		return nil, errors.New("Amount require more than 0")
 	}
-	
+
 	tx, err := tokenContract.Transfer(auth, common.HexToAddress(rq.AddrTo), big.NewInt(rq.Amount))
 	if err != nil {
 		log.Fatalf("Failed to request token transfer: %v", err)
