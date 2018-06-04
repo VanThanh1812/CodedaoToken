@@ -60,13 +60,13 @@ func main() {
 	// redirect
 	r := mux.NewRouter()
 	r.HandleFunc("/click", OnNewClick)
-
+/*
 	// api
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
-	beego.Run()
+	beego.Run()*/
 
 }
 
