@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32648817-e7cd-4859-a451-06e328bfb877" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/routers/router.go" afterPath="$PROJECT_DIR$/routers/router.go" />
       <change beforePath="$PROJECT_DIR$/swagger/swagger-ui.css" afterPath="$PROJECT_DIR$/swagger/swagger-ui.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/swagger/swagger-ui.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
-              <caret line="0" column="25220" lean-forward="false" selection-start-line="0" selection-start-column="25220" selection-end-line="0" selection-end-column="25220" />
+              <caret line="0" column="25219" lean-forward="false" selection-start-line="0" selection-start-column="25219" selection-end-line="0" selection-end-column="25219" />
               <folding>
                 <element signature="e#12151#12530#1" expanded="true" />
                 <element signature="e#15428#15669#1" expanded="true" />
@@ -702,7 +701,7 @@
     <entry file="file://$PROJECT_DIR$/swagger/swagger-ui.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="0" column="25220" lean-forward="false" selection-start-line="0" selection-start-column="25220" selection-end-line="0" selection-end-column="25220" />
+          <caret line="0" column="25219" lean-forward="false" selection-start-line="0" selection-start-column="25219" selection-end-line="0" selection-end-column="25219" />
           <folding>
             <element signature="e#12151#12530#1" expanded="true" />
             <element signature="e#15428#15669#1" expanded="true" />
