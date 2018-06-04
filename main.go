@@ -55,6 +55,11 @@ func main() {
 	}
 	fmt.Printf("Transfer pending: 0x%x\n", tx.Hash())*/
 
+
+	// redirect
+	r := mux.NewRouter()
+	r.HandleFunc("/click", OnNewClick)
+	
 	// api
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
@@ -62,9 +67,6 @@ func main() {
 	}
 	beego.Run()
 
-	// redirect
-	r := mux.NewRouter()
-	r.HandleFunc("/click", OnNewClick)
 }
 
 func OnNewClick(writer http.ResponseWriter, request *http.Request){
