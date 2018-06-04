@@ -41,9 +41,9 @@ func OnNewClick(from string, parent string, contract string) (string, string) {
 		log.Printf("Failed to instantiate a PR contract: %v", err)
 		return "", fmt.Sprintf("Failed to instantiate a PR contract: %v", err)
 	}
-	fmt.Println(from)
-	fmt.Println(parent)
-	fmt.Println(contract)
+	log.Println(from)
+	log.Println(parent)
+	log.Println(contract)
 	tx, err := prContract.OnNewClick(auth, common.HexToAddress(from), common.HexToAddress(parent))
 	if err != nil {
 		log.Printf("Failed to connect to request OnNewClick: %v", err)

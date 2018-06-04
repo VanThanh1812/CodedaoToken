@@ -94,7 +94,7 @@ func OnNewClick(writer http.ResponseWriter, request *http.Request){
 	link := request.URL.Query().Get("ref")
 
 	txhash, err := prnetworkcontract.OnNewClick(from, parent, contract)
-	fmt.Printf("Transfer pending: %x %x \n", txhash, err)
+	log.Printf("Transfer pending: %x %x \n", txhash, err)
 	http.Redirect(writer, request,link, 301)
 
 	writer.Write([]byte(fmt.Sprintf("Transfer pending: %x\n", txhash)))
