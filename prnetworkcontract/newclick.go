@@ -6,6 +6,7 @@ import (
 	"strings"
 	"log"
 	"github.com/ethereum/go-ethereum/common"
+	"fmt"
 )
 
 var (
@@ -25,20 +26,25 @@ func init(){
 	}
 }
 
-func GetPrContract (addr string) *LinkContract {
+func GetPrContract (addr string) (*LinkContract, error) {
 	client, err := payment.GetClient()
 	token, err := NewLinkContract(common.HexToAddress(addr), client)
 	if err != nil {
 		log.Fatalf("Failed to instantiate a PR contract: %v", err)
 	}
-	return token
+	return token, nil
 }
 
-func OnNewClick(from string, parent string, contract string) string {
-	prContract := GetPrContract(contract)
+func OnNewClick(from string, parent string, contract string) (string, string) {
+	prContract, err := GetPrContract(contract)
+	if err != nil {
+		log.Printf("Failed to instantiate a PR contract: %v", err)
+		return "", fmt.Sprintf("Failed to instantiate a PR contract: %v", err)
+	}
 	tx, err := prContract.OnNewClick(auth, common.HexToAddress(from), common.HexToAddress(parent))
 	if err != nil {
-		log.Fatalf("Failed to connect to request OnNewClick: %v", err)
+		log.Printf("Failed to connect to request OnNewClick: %v", err)
+		return "", fmt.Sprintf("Failed to connect to request OnNewClick: %v", err.Error())
 	}
-	return tx.Hash().String()
+	return tx.Hash().String(), ""
 }
