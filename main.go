@@ -66,6 +66,14 @@ func main() {
 		log.Fatalf("Failed to request token transfer: %v", err)
 	}
 	fmt.Printf("Transfer pending: 0x%x\n", tx.Hash())*/
+
+	// api
+	if beego.BConfig.RunMode == "dev" {
+		beego.BConfig.WebConfig.DirectoryIndex = true
+		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+	}
+	beego.Run()
+
 	addr, err := determineListenAddress()
 	if err != nil {
 		log.Fatal(err)
@@ -75,13 +83,6 @@ func main() {
 	if err := http.ListenAndServe(addr, mx); err != nil {
 		log.Fatal(err)
 	}
-	// api
-	if beego.BConfig.RunMode == "dev" {
-		beego.BConfig.WebConfig.DirectoryIndex = true
-		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-	}
-	beego.Run()
-
 }
 
 func OnNewClick(writer http.ResponseWriter, request *http.Request){
@@ -93,9 +94,8 @@ func OnNewClick(writer http.ResponseWriter, request *http.Request){
 	link := request.URL.Query().Get("ref")
 
 	txhash, err := prnetworkcontract.OnNewClick(from, parent, contract)
-	fmt.Printf("Transfer pending: %x %x\n", txhash, err)
+	fmt.Printf("Transfer pending: %x %x \n", txhash, err)
 	http.Redirect(writer, request,link, 301)
 
 	writer.Write([]byte(fmt.Sprintf("Transfer pending: %x\n", txhash)))
-
 }
