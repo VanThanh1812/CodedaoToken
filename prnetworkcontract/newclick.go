@@ -36,6 +36,7 @@ func GetPrContract (addr string) (*LinkContract, error) {
 }
 
 func OnNewClick(from string, parent string, contract string) (string, string) {
+	fmt.Println("here")
 	prContract, err := GetPrContract(contract)
 	if err != nil {
 		log.Printf("Failed to instantiate a PR contract: %v", err)
