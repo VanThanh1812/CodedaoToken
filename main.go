@@ -2,12 +2,23 @@ package main
 
 import (
 	_ "codedaotoken/routers"
-	"github.com/astaxie/beego"
-	"github.com/gorilla/mux"
 	"net/http"
 	"codedaotoken/prnetworkcontract"
 	"fmt"
+	"github.com/astaxie/beego"
+	"github.com/gorilla/mux"
+	"log"
+	"os"
 )
+
+func determineListenAddress() (string, error) {
+	port := os.Getenv("PORT")
+	if port == "" {
+		return ":" + "8080", nil
+		return "", fmt.Errorf("$PORT not set")
+	}
+	return ":" + port, nil
+}
 
 func main() {
 
@@ -55,18 +66,21 @@ func main() {
 		log.Fatalf("Failed to request token transfer: %v", err)
 	}
 	fmt.Printf("Transfer pending: 0x%x\n", tx.Hash())*/
-
-
-	// redirect
-	r := mux.NewRouter()
-	r.HandleFunc("/click", OnNewClick)
-/*
+	addr, err := determineListenAddress()
+	if err != nil {
+		log.Fatal(err)
+	}
+	mx := mux.NewRouter()
+	mx.HandleFunc("/click", OnNewClick)
+	if err := http.ListenAndServe(addr, mx); err != nil {
+		log.Fatal(err)
+	}
 	// api
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
-	beego.Run()*/
+	beego.Run()
 
 }
 

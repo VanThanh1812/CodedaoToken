@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32648817-e7cd-4859-a451-06e328bfb877" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/codedaotoken" afterPath="$PROJECT_DIR$/codedaotoken" />
+      <change beforePath="$PROJECT_DIR$/controllers/payment.go" afterPath="$PROJECT_DIR$/controllers/payment.go" />
       <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="payment.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/payment.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="156" column="18" lean-forward="false" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="18" />
+            <state relative-caret-position="68">
+              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -46,10 +48,10 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
               <folding>
-                <element signature="e#14#157#0" expanded="true" />
+                <element signature="e#14#170#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,7 +155,6 @@
         <option value="$PROJECT_DIR$/payment/earn.go" />
         <option value="$PROJECT_DIR$/routers/router.go" />
         <option value="$PROJECT_DIR$/account/account.go" />
-        <option value="$PROJECT_DIR$/controllers/payment.go" />
         <option value="$PROJECT_DIR$/conf/app.conf" />
         <option value="$PROJECT_DIR$/payment/transfer.go" />
         <option value="$PROJECT_DIR$/contract/prnetwork.sol" />
@@ -162,6 +163,7 @@
         <option value="$PROJECT_DIR$/prnetworkcontract/PrNetworkContract.go" />
         <option value="$PROJECT_DIR$/prnetworkcontract/newclick.go" />
         <option value="$PROJECT_DIR$/payment/get_client.go" />
+        <option value="$PROJECT_DIR$/controllers/payment.go" />
         <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
@@ -605,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/payment.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="156" column="18" lean-forward="false" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contract/codedaotoken.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -681,12 +675,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/payment.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="493">
+          <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
           <folding>
-            <element signature="e#14#157#0" expanded="true" />
+            <element signature="e#14#170#0" expanded="true" />
           </folding>
         </state>
       </provider>
