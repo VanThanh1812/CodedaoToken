@@ -28,3 +28,12 @@ func GetContract () *contract.CodedaoNetwork {
 	}
 	return token
 }
+
+func GetPrContract (addr string) *contract.LinkContract {
+	client, err := GetClient()
+	token, err := contract.NewLinkContract(common.HexToAddress(addr), client)
+	if err != nil {
+		log.Fatalf("Failed to instantiate a PR contract: %v", err)
+	}
+	return token
+}

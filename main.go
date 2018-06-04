@@ -3,6 +3,9 @@ package main
 import (
 	_ "codedaotoken/routers"
 	"github.com/astaxie/beego"
+	"github.com/gorilla/mux"
+	"net/http"
+	"codedaotoken/prnetwork"
 )
 
 func main() {
@@ -52,9 +55,30 @@ func main() {
 	}
 	fmt.Printf("Transfer pending: 0x%x\n", tx.Hash())*/
 
+	// api
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
 	beego.Run()
+
+	// redirect
+	r := mux.NewRouter()
+	r.HandleFunc("/click", OnNewClick)
+}
+
+func OnNewClick(writer http.ResponseWriter, request *http.Request){
+	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	from := request.URL.Query().Get("from")
+	parent := request.URL.Query().Get("parent")
+	contract := request.URL.Query().Get("contract")
+	link := request.URL.Query().Get("ref")
+
+	txhash := prnetwork.OnNewClick(from, parent, contract)
+
+	http.Redirect(writer, request,link, 301)
+
+	writer.Write([]byte(txhash))
+
 }
