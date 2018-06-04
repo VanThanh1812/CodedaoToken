@@ -9,6 +9,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"os"
+	"github.com/astaxie/beego"
 )
 
 func determineListenAddress() (string, error) {
@@ -68,11 +69,11 @@ func main() {
 	fmt.Printf("Transfer pending: 0x%x\n", tx.Hash())*/
 
 	// api
-	/*if beego.BConfig.RunMode == "dev" {
+	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
-	beego.Run()*/
+	beego.Run()
 
 	addr, err := determineListenAddress()
 	if err != nil {
