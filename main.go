@@ -6,6 +6,7 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"codedaotoken/prnetworkcontract"
+	"fmt"
 )
 
 func main() {
@@ -59,7 +60,7 @@ func main() {
 	// redirect
 	r := mux.NewRouter()
 	r.HandleFunc("/click", OnNewClick)
-	
+
 	// api
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
@@ -78,9 +79,9 @@ func OnNewClick(writer http.ResponseWriter, request *http.Request){
 	link := request.URL.Query().Get("ref")
 
 	txhash := prnetworkcontract.OnNewClick(from, parent, contract)
-
+	fmt.Printf("Transfer pending: %x\n", txhash)
 	http.Redirect(writer, request,link, 301)
 
-	writer.Write([]byte(txhash))
+	writer.Write([]byte(fmt.Sprintf("Transfer pending: %x\n", txhash)))
 
 }
