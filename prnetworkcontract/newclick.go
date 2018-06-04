@@ -25,8 +25,17 @@ func init(){
 	}
 }
 
+func GetPrContract (addr string) *LinkContract {
+	client, err := payment.GetClient()
+	token, err := NewLinkContract(common.HexToAddress(addr), client)
+	if err != nil {
+		log.Fatalf("Failed to instantiate a PR contract: %v", err)
+	}
+	return token
+}
+
 func OnNewClick(from string, parent string, contract string) string {
-	prContract := payment.GetPrContract(contract)
+	prContract := GetPrContract(contract)
 	tx, err := prContract.OnNewClick(auth, common.HexToAddress(from), common.HexToAddress(parent))
 	if err != nil {
 		log.Fatalf("Failed to connect to request OnNewClick: %v", err)
