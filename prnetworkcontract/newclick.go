@@ -1,4 +1,4 @@
-package prnetwork
+package prnetworkcontract
 
 import (
 	"codedaotoken/payment"

@@ -5,6 +5,7 @@ import (
 	"codedaotoken/contract"
 	"github.com/ethereum/go-ethereum/common"
 	"log"
+	"codedaotoken/prnetworkcontract"
 )
 
 const (
@@ -29,9 +30,9 @@ func GetContract () *contract.CodedaoNetwork {
 	return token
 }
 
-func GetPrContract (addr string) *contract.LinkContract {
+func GetPrContract (addr string) *prnetworkcontract.LinkContract {
 	client, err := GetClient()
-	token, err := contract.NewLinkContract(common.HexToAddress(addr), client)
+	token, err := prnetworkcontract.NewLinkContract(common.HexToAddress(addr), client)
 	if err != nil {
 		log.Fatalf("Failed to instantiate a PR contract: %v", err)
 	}

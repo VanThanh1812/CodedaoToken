@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/gorilla/mux"
 	"net/http"
-	"codedaotoken/prnetwork"
+	"codedaotoken/prnetworkcontract"
 )
 
 func main() {
