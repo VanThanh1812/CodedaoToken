@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32648817-e7cd-4859-a451-06e328bfb877" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
+      <change beforePath="$PROJECT_DIR$/routers/router.go" afterPath="$PROJECT_DIR$/routers/router.go" />
+      <change beforePath="$PROJECT_DIR$/swagger/swagger-ui.css" afterPath="$PROJECT_DIR$/swagger/swagger-ui.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
               <folding>
                 <element signature="e#14#200#0" expanded="true" />
               </folding>
@@ -91,21 +92,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prnetwork.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prnetworkcontract/prnetwork.sol">
+      <file leaf-file-name="router.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routers/router.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="102" column="51" lean-forward="false" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+            <state relative-caret-position="170">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodedaoToken.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contract/CodedaoToken.sol">
+      <file leaf-file-name="swagger-ui.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/swagger/swagger-ui.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2533">
-              <caret line="167" column="17" lean-forward="false" selection-start-line="167" selection-start-column="17" selection-end-line="167" selection-end-column="17" />
+            <state relative-caret-position="467">
+              <caret line="0" column="25220" lean-forward="false" selection-start-line="0" selection-start-column="25220" selection-end-line="0" selection-end-column="25220" />
+              <folding>
+                <element signature="e#12151#12530#1" expanded="true" />
+                <element signature="e#15428#15669#1" expanded="true" />
+                <element signature="e#17751#17950#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prnetwork.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prnetworkcontract/prnetwork.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="102" column="51" lean-forward="false" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -143,7 +158,6 @@
         <option value="$PROJECT_DIR$/payment/state_token.go" />
         <option value="$PROJECT_DIR$/models/payment.go" />
         <option value="$PROJECT_DIR$/payment/earn.go" />
-        <option value="$PROJECT_DIR$/routers/router.go" />
         <option value="$PROJECT_DIR$/account/account.go" />
         <option value="$PROJECT_DIR$/conf/app.conf" />
         <option value="$PROJECT_DIR$/payment/transfer.go" />
@@ -155,6 +169,8 @@
         <option value="$PROJECT_DIR$/controllers/payment.go" />
         <option value="$PROJECT_DIR$/prnetworkcontract/newclick.go" />
         <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/routers/router.go" />
+        <option value="$PROJECT_DIR$/swagger/swagger-ui.css" />
       </list>
     </option>
   </component>
@@ -230,6 +246,11 @@
               <item name="codedaotoken" type="b2602c69:ProjectViewProjectNode" />
               <item name="codedaotoken" type="462c0819:PsiDirectoryNode" />
               <item name="routers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codedaotoken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codedaotoken" type="462c0819:PsiDirectoryNode" />
+              <item name="swagger" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="codedaotoken" type="b2602c69:ProjectViewProjectNode" />
@@ -310,13 +331,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/payment.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3298">
-          <caret line="199" column="5" lean-forward="false" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routers/router.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -581,14 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routers/router.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contract/codedaotoken.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -677,10 +683,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
           <folding>
             <element signature="e#14#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/router.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swagger/swagger-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="0" column="25220" lean-forward="false" selection-start-line="0" selection-start-column="25220" selection-end-line="0" selection-end-column="25220" />
+          <folding>
+            <element signature="e#12151#12530#1" expanded="true" />
+            <element signature="e#15428#15669#1" expanded="true" />
+            <element signature="e#17751#17950#1" expanded="true" />
           </folding>
         </state>
       </provider>
