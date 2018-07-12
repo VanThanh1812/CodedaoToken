@@ -3,15 +3,15 @@ pragma solidity ^0.4.18;
 
 // ----------------------------------------------------------------------------
 
-// 'CDS' 'Codedao Network Crystal' token contract
+// 'CDS' 'Coder On The Go' token contract
 
 //
 
-// Symbol      : CNC
+// Symbol      : COG
 
-// Name        : Codedao Network Crystal
+// Name        : Coder On The Go
 
-// Total supply:
+// Total supply: 1.000.000.000
 
 // Decimals    : 18
 
@@ -166,18 +166,16 @@ contract CodedaoNetwork is ERC20Interface, Ownable {
     event Earn(address indexed to, uint tokens);
 
 constructor () public {
-symbol = "CNC";
-name = "Codedao Network Crystal Token";
-decimals = 0;
-totalSupply = 0;
-balances[owner] = totalSupply;
-tokenSaleContract = msg.sender;
+    symbol = "COG";
+    name = "Coder On The Go Token";
+    decimals = 0;
+    totalSupply = 1000000000;
+    balances[owner] = totalSupply;
+    tokenSaleContract = msg.sender;
 }
 
 function () payable onlyOwner public {
-uint256 _issued = (msg.value*1000)/10**18;
-totalSupply += _issued;
-balances[msg.sender] += _issued;
+    revert();
 }
 
 // ------------------------------------------------------------------------
